@@ -2,6 +2,7 @@
 
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
+import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import { carouselSlides } from "@/content/site";
 import { CollectionCategories } from "@/components/home/CollectionCategories";
@@ -56,18 +57,27 @@ export function HeroCarousel() {
           <div className="overflow-hidden rounded-sm border border-stone-200/90 bg-white shadow-sm ring-1 ring-stone-900/[0.02]">
             <div ref={emblaRef}>
               <div className="flex">
-                {carouselSlides.map((slide) => (
+                {carouselSlides.map((slide, index) => (
                   <div
                     key={slide.id}
-                    className="min-w-0 flex-[0_0_100%] px-8 py-14 sm:px-12 sm:py-16"
+                    className="min-w-0 flex-[0_0_100%] px-6 py-10 sm:px-10 sm:py-14"
                   >
-                    <div className="mx-auto max-w-lg text-center sm:text-left">
-                      <h2 className="font-display text-3xl text-stone-900 sm:text-4xl">
-                        {slide.title}
-                      </h2>
-                      <p className="mt-4 text-lg leading-relaxed text-stone-600">
-                        {slide.subtitle}
-                      </p>
+                    <div className="mx-auto grid max-w-4xl gap-8 sm:grid-cols-2 sm:items-center sm:gap-10">
+                      <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm bg-stone-100 ring-1 ring-stone-900/[0.04]">
+                        <Image
+                          src={encodeURI(slide.imageSrc)}
+                          alt={slide.title}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 640px) 100vw, 50vw"
+                          priority={index === 0}
+                        />
+                      </div>
+                      <div className="flex flex-col justify-center text-center sm:text-left">
+                        <h2 className="font-display text-3xl text-stone-900 sm:text-4xl">
+                          {slide.title}
+                        </h2>
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -83,7 +93,7 @@ export function HeroCarousel() {
                   type="button"
                   role="tab"
                   aria-selected={selected === i}
-                  aria-label={`Go to slide ${i + 1}`}
+                  aria-label={`Go to ${slide.title}`}
                   onClick={() => scrollTo(i)}
                   className={`h-1.5 rounded-full transition-all ${
                     selected === i
