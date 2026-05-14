@@ -45,10 +45,7 @@ export function HeroCarousel() {
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-stone-100/80 via-transparent to-transparent" />
       <div className="relative mx-auto max-w-5xl px-6 pb-14 pt-10 sm:px-8 sm:pb-16 sm:pt-12">
         <div className="mb-8 max-w-xl">
-          <p className="text-xs font-medium uppercase tracking-[0.2em] text-stone-500">
-            New season
-          </p>
-          <h1 className="mt-3 font-display text-4xl leading-tight tracking-tight text-stone-900 sm:text-5xl">
+          <h1 className="font-display text-4xl leading-tight tracking-tight text-stone-900 sm:text-5xl">
             Silver that stays close
           </h1>
         </div>
