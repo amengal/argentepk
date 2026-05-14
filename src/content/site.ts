@@ -1,6 +1,7 @@
 export const site = {
   name: "argénte",
   tagline: "Hand-finished sterling silver",
+  instagramUrl: "https://www.instagram.com/argentepk",
 } as const;
 
 export const carouselSlides = [

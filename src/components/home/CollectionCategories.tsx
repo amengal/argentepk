@@ -6,18 +6,13 @@ export function CollectionCategories() {
   return (
     <div className="border-t border-stone-200/80 bg-[var(--surface)]">
       <div className="mx-auto max-w-5xl px-6 pb-16 pt-14 sm:px-8 sm:pb-20 sm:pt-16">
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <p className="text-xs font-medium uppercase tracking-[0.2em] text-stone-500">
-              Shop by form
-            </p>
-            <h2 className="mt-2 font-display text-3xl tracking-tight text-stone-900 sm:text-4xl">
-              Categories
-            </h2>
-          </div>
-          <p className="max-w-md text-sm leading-relaxed text-stone-600 sm:text-right">
-            Explore silhouettes we return to again and again. Add imagery when your catalogue is ready.
+        <div>
+          <p className="text-xs font-medium uppercase tracking-[0.2em] text-stone-500">
+            Shop by form
           </p>
+          <h2 className="mt-2 font-display text-3xl tracking-tight text-stone-900 sm:text-4xl">
+            Categories
+          </h2>
         </div>
 
         <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
