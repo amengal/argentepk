@@ -68,10 +68,6 @@ jobs:
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
-        env:
-          # Project Pages URL is /<repository>; must match next.config basePath (next.config.ts is not patched by configure-pages).
-          BASE_PATH: /${{ github.event.repository.name }}
-          NEXT_PUBLIC_BASE_PATH: /${{ github.event.repository.name }}
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
